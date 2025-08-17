@@ -6,6 +6,7 @@
 ;; Set the default font to DejaVu Sans Mono with specific size and weight
 (set-face-attribute 'default nil
                     :height 130 :weight 'regular :family "Roboto Mono")
+
 (custom-set-faces
  '(font-lock-variable-use-face ((t (:inherit default))))
  '(font-lock-function-call-face ((t (:inherit font-lock-function-name-face :weight bold))))

@@ -93,7 +93,11 @@
   (read-extended-command-predicate #'command-completion-default-include-p)
   ;; Disable Ispell completion function. As an alternative try `cape-dict'.
   (text-mode-ispell-word-completion nil)
-  (corfu-auto t))
+  (corfu-auto t)
+  (corfu-popupinfo-mode)
+  (corfu-history-mode)
+  (corfu-echo-mode))
+
 
 
 ;; Cape, or Completion At Point Extensions, extends the capabilities of
@@ -516,4 +520,33 @@
   :config
   (mood-line-mode))
 
+(use-package org
+  :ensure t
+  :defer t
+  :hook
+  (org-mode . org-indent-mode)
+  :config
+  (setq org-hide-emphasis-markers t))
+
+(use-package org-modern
+  :ensure t
+  :defer t
+  :hook
+  (org-mode . org-modern-mode))
+
+(use-package org-appear
+  :ensure t
+  :defer t
+  :hook
+  (org-mode . org-appear-mode))
+
+(use-package yasnippet
+  :ensure t
+  :config
+  (yas-global-mode 1))
+
+
+(use-package doom-snippets
+  :load-path "~/.config/snippets/"
+  :after yasnippet)
 ;;; post-init.el ends here
